@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>tech.fullink.credit</groupId>
+    <artifactId>credit-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>demo-parent</module>
+        <module>tools-parent</module>
+        <module>spring-boot-starters-parent</module>
+        <module>credit-spring-boot-parent</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.version>3.5.1</maven.compiler.version>
+        <maven.jar.version>3.0.2</maven.jar.version>
+        <maven.surefire.plugin.version>2.17</maven.surefire.plugin.version>
+        <guava_version>23.0</guava_version>
+        <java_jwt.version>3.2.0</java_jwt.version>
+        <fastjson_version>1.2.62</fastjson_version>
+        <swagger_version>2.9.2</swagger_version>
+        <pagehelper_version>4.1.4</pagehelper_version>
+        <common_mapper_version>2.0.3</common_mapper_version>
+        <druid_version>1.1.17</druid_version>
+        <mybatis_version>2.0.0</mybatis_version>
+        <spring_kafka_version>2.2.8.RELEASE</spring_kafka_version>
+        <hibernate_validator_version>5.4.1.Final</hibernate_validator_version>
+        <apache_lang3_version>3.9</apache_lang3_version>
+        <joda_time_version>2.10.4</joda_time_version>
+
+        <lombok_version>1.16.10</lombok_version>
+
+        <spring_boot_version>2.1.6.RELEASE</spring_boot_version>
+        <spring_cloud_version>Greenwich.RELEASE</spring_cloud_version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--    springboot dependencies     -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring_boot_version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--    springcloud dependencies    -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring_cloud_version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--    框架提供的依赖包    -->
+            <dependency>
+                <groupId>tech.fullink.credit</groupId>
+                <artifactId>credit</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.fullink.credit</groupId>
+                <artifactId>simple-server-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.fullink.credit</groupId>
+                <artifactId>tools-datasource-druid</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.fullink.credit</groupId>
+                <artifactId>tools-middleware-kafka</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tech.fullink.credit</groupId>
+                <artifactId>credit</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!--    三方依赖包   -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>${java_jwt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${common_mapper_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring_kafka_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate_validator_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache_lang3_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda_time_version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok_version}</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven.jar.version}</version>
+                    <configuration>
+                        <archive>
+                            <addMavenDescriptor>false</addMavenDescriptor>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.1</version>
+                    <configuration>
+                        <attach>true</attach>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire.plugin.version}</version>
+                    <configuration>
+                        <includes>
+                            <include>**/*Test.java</include>
+                        </includes>
+                        <excludes>
+                            <exclude>**/TestCase.java</exclude>
+                        </excludes>
+                        <skip>false</skip>
+                        <testFailureIgnore>false</testFailureIgnore>
+                        <skipTests>true</skipTests>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-archetype-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+                <!--    maven 版本控制插件    -->
+                <!--快照版本+1      mvn versions:set  -DnextSnapshot-->
+                <!--更新所有模块至指定版本     mvn versions:set  -DnewVersion=1.0.0-SNAPSHOT-->
+                <!--更新指定模块     mvn versions:set  -DnewVersion=1.0.1-SNAPSHOT -DgroupId=${groupId} -DartifactId=${artifactId-->
+                <!--去除快照-SNAPSHOT    mvn versions:set  -DremoveSnapshot=true-->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>2.6</version>
+                    <configuration>
+                        <generateBackupPoms>false</generateBackupPoms>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <!-- 发布JAR包 -->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>http://172.16.245.37:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://172.16.245.37:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

@@ -1,0 +1,10 @@
+## spring boot
+debug: true
+
+#spring:
+#  main:
+#    web-application-type: servlet
+
+#logging:
+#  level:
+#    org.springframework.boot.autoconfigure: error

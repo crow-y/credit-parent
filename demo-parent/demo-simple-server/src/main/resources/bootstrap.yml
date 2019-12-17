@@ -1,0 +1,23 @@
+server:
+  port: 7001
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: demo-simple-server
+  cloud:
+    # =====================================
+    # consul配置
+    consul:
+      discovery:
+        healthCheckUrl: http://localhost:${server.port}/health
+        healthCheckInterval: 15s
+        instance-id: ${spring.application.name}
+        enabled: true
+        heartbeat:
+          enabled: true
+        fail-fast: true
+        register: true
+        hostname: localhost
+        service-name: ${spring.application.name}

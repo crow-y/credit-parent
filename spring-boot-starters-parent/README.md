@@ -1,0 +1,1 @@
+**starter定义目录, 做springboot自动装配处理**

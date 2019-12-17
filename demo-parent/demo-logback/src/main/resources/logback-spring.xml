@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="10 seconds">
+    <contextName>logback</contextName>
+    <include resource="tech/fullink/credit/log/base-spring.xml"/>
+    <include resource="tech/fullink/credit/log/defaults-spring.xml"/>
+</configuration>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<included>
+    <!--  spring配置文件信息  -->
+    <springProperty scope="context" name="SERVER_NAME" source="spring.application.name"/>
+    <!-- 彩色日志 -->
+    <!-- 彩色日志依赖的渲染类 -->
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex"
+                    converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx"
+                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+    <!-- 控制台彩色日志格式 -->
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%clr(%date{ISO8601}){faint} %clr(%5p) - %clr([%X{CORRELATION_ID}-%X{CHAIN_ID}]){magenta} %clr([%t]){faint} %clr(%class{0} %line){cyan} %clr(:){faint}%X{call-from} %m%n%wex"/>
+    <property name="BASE_LOG_PATTERN" value="%date{ISO8601} %5p - [%X{CORRELATION_ID}-%X{CHAIN_ID}] [%t] %class{0} %line:%X{call-from} %m%n%wex"/>
+
+    <!--  logback 自定义属性  -->
+    <property name="BASE_LOG_CHECK" scope="context" value="true"/>
+    <property name="BASE_LOG_HISTORY_DAYS" value="30"/>
+    <property name="BASE_LOG_SIZE" value="500MB"/>
+    <property name="BASE_LOG_PATH" value="/data/appLogs/${SERVER_NAME}"/>
+
+    <logger name="org.apache.kafka" level="WARN"/>
+</included>

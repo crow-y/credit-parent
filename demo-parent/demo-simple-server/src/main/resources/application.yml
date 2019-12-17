@@ -1,0 +1,19 @@
+debug: true
+## 开启任务调度
+common.schedule.enabled: true
+## 开启接口授权
+common.authorization.enabled: true
+
+spring:
+  datasource:
+    url: 'jdbc:mysql://${base.db.address:47.98.127.23:3306}/binder_flow?allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8'
+    username: 'root'
+    password: 'jgzmwudi0820'
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+topic:
+  # =====================================
+  # kafka配置
+  kafka:
+    server: 192.168.1.177:9092
+    group: ${application.name}
