@@ -1,0 +1,35 @@
+## druid 连接池配置
+spring:
+  datasource:
+    # 链接池设置
+    druid:
+      initial-size: 5
+      min-idle: 1
+      max-active: 50
+      # 配置获取连接等待超时的时间 60s
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      filters:  stat,wall
+      connectionProperties:
+        druid:
+          stat:
+            mergeSql: true
+            slowSqlMillis: 5000
+      # 合并多个DruidDataSource的监控数据
+      use-global-data-source-stat: true
+
+## 默认 mapper 配置
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+mapper:
+  mappers:
+    - tech.fullink.credit.tools.datasource.BaseMapper
+  notEmpty: true

@@ -14,6 +14,7 @@
     <modules>
         <module>demo-logback</module>
         <module>demo-simple-server</module>
+        <module>demo-basic-server</module>
     </modules>
 
     <dependencies>

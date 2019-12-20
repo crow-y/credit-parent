@@ -1,0 +1,5 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+tech.fullink.credit.spring.boot.autoconfigure.BasicServiceAutoConfiguration, \
+tech.fullink.credit.spring.boot.autoconfigure.ServiceSwaggerAutoConfiguration,\
+tech.fullink.credit.spring.boot.autoconfigure.ServiceDataSourceAutoConfiguration

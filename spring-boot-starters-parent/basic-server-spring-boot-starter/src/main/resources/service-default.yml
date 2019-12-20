@@ -1,0 +1,40 @@
+## actuator 端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: beans,trace
+      base-path: /
+      path-mapping:
+        health: health
+  endpoint:
+    health:
+      show-details: always
+    # 启用shutdown端点, POST访问
+    shutdown:
+      enabled: true
+
+## 出现错误时, 直接抛出异常
+spring.mvc.throw-exception-if-no-handler-found: true
+## 关闭工程中的资源文件建立映射
+spring.resources.add-mappings: false
+
+## 是否暴露jmx，默认为true 下面为安全相关参数
+spring.jmx.enabled: false
+security.basic.enabled: false
+endpoints.jmx.enabled: false
+
+## feign 全局超时设置
+feign:
+  client:
+    config:
+      #服务名，填写default为所有服务
+      remote-service:
+        # 链接超时 5秒
+        connectTimeout: 5000
+        # 请求超时 60秒
+        readTimeout: 60000
+
+## 默认开启swagger
+swagger.enabled: true

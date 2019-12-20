@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>simple-server-spring-boot-starter</module>
+        <module>basic-server-spring-boot-starter</module>
     </modules>
 
     <artifactId>spring-boot-starters-parent</artifactId>
