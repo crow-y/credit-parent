@@ -31,7 +31,7 @@
         <druid_version>1.1.17</druid_version>
         <mybatis_version>2.0.0</mybatis_version>
         <spring_kafka_version>2.2.8.RELEASE</spring_kafka_version>
-        <hibernate_validator_version>5.4.1.Final</hibernate_validator_version>
+        <hibernate_validator_version>5.4.2.Final</hibernate_validator_version>
         <apache_lang3_version>3.9</apache_lang3_version>
         <joda_time_version>2.10.4</joda_time_version>
 
