@@ -24,7 +24,7 @@
         <maven.surefire.plugin.version>2.17</maven.surefire.plugin.version>
         <guava_version>23.0</guava_version>
         <java_jwt.version>3.2.0</java_jwt.version>
-        <fastjson_version>1.2.62</fastjson_version>
+        <fastjson_version>1.2.83</fastjson_version>
         <swagger_version>2.9.2</swagger_version>
         <pagehelper_version>4.1.4</pagehelper_version>
         <common_mapper_version>2.0.3</common_mapper_version>
